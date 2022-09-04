@@ -6,6 +6,20 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <title>{{ config('app.name', 'Laravel') }}</title>
+        <style> 
+        html,
+        body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        }
+
+            #map {
+                height: 500px;
+                border: 1px solid red;
+                }
+
+            </style>
 
         <!-- Fonts -->
         <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
@@ -18,16 +32,23 @@
             @include('layouts.navigation')
 
             <!-- Page Heading -->
-            <header class="bg-white shadow">
+        <!--    <header class="bg-white shadow">
                 <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                    {{ $header }}
+                  
+                   {{ $header }}
                 </div>
             </header>
+            -->
 
             <!-- Page Content -->
             <main>
+  
                 {{ $slot }}
             </main>
         </div>
+     
+        <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDXoIpHkHiAtZKstlPMpDTeBVEgmzH_Xyc&callback=initMap&v=weekly">
+        </script> 
     </body>
 </html>
